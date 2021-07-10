@@ -30,17 +30,17 @@ function calculateRBScore(stats) {
 }
 
 function calculateWRScore(stats) {
-  let receiveReceptions = stats.receiving.reception * 1
+  let receiveReceptions = stats.receiving.receptions * 1
   let receiveYards = stats.receiving.yards / (10 * 1)
   let receiveTouchdowns = stats.receiving.touchdowns * 6
   let receivefumbles = stats.receiving.fumbles * -3
   let rushYards = stats.rushing.yards / (10 * 1)
   let rushTouchdowns = stats.rushing.touchdowns * 6
   let rushFumbles = stats.rushing.fumbles * -3
-  let returnKickYards = stats.return.kickreturn.returns / (15 * 1)
+  let returnKickYards = stats.return.kickreturn.yards / (15 * 1)
   let returnKickTDs = stats.return.kickreturn.touchdowns * 6
   let returnKickFumbles = stats.return.kickreturn.fumbles * -3
-  let returnPuntYards = stats.return.puntreturn.returns / (15 * 1)
+  let returnPuntYards = stats.return.puntreturn.yards / (15 * 1)
   let returnPuntTDs = stats.return.puntreturn.touchdowns * 6
   let returnPuntFumbles = stats.return.puntreturn.fumbles * -3
 
@@ -48,7 +48,7 @@ function calculateWRScore(stats) {
   return receiveReceptions + receiveYards + receiveTouchdowns + receivefumbles + rushYards + rushTouchdowns + rushFumbles + returnKickYards + returnKickTDs + returnKickFumbles + returnPuntYards + returnPuntTDs + returnPuntFumbles
 }
 function calculateTEScore(stats) {
-  let receiveReceptions = stats.receiving.reception * 1
+  let receiveReceptions = stats.receiving.receptions * 1
   let receiveYards = stats.receiving.yards / (10 * 1)
   let receiveTouchdowns = stats.receiving.touchdowns * 6
   let receivefumbles = stats.receiving.fumbles * -3
