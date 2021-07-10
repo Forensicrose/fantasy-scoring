@@ -11,7 +11,7 @@ function calculateQBScore(stats) {
 }
 
 function calculateRBScore(stats) {
-  let receiveReceptions = stats.receiving.reception * 1
+  let receiveReceptions = stats.receiving.receptions * 1
   let receiveYards = stats.receiving.yards / (10 * 1)
   let receiveTouchdowns = stats.receiving.touchdowns * 6
   let receivefumbles = stats.receiving.fumbles * -3
