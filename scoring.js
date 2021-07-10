@@ -72,6 +72,8 @@ function calculateScore(player) {
     case ('TE'):
       score = calculateTEScore(player.stats)
       break
+    default: ('unknown')
+      score = 0
   }
 
   return score
