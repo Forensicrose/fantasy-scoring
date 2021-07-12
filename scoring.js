@@ -27,15 +27,15 @@ function calculateRBScore(stats) {
   let rushYards = stats.rushing.yards / rushingYards
   let rushTouchdowns = stats.rushing.touchdowns * touchDowns
   let rushFumbles = stats.rushing.fumbles * fumbles
-  let retKickYards = stats.return.kickreturn.returns * returns
-  let retKickTDs = stats.return.kickreturn.touchdowns * touchDowns
+  let returnKickYards = stats.return.kickreturn.returns * returns
+  let returnKickTouchdowns = stats.return.kickreturn.touchdowns * touchDowns
   let returnKickFumbles = stats.return.kickreturn.fumbles * fumbles
   let returnPuntYards = stats.return.puntreturn.returns / returns
   let returnPuntTouchdowns = stats.return.puntreturn.touchdowns * touchDowns
   let returnPuntFumbles = stats.return.puntreturn.fumbles * fumbles
 
   // eslint-disable-next-line max-len
-  return receiveReceptions + receiveYards + receiveTouchdowns + receivefumbles + rushYards + rushTouchdowns + rushFumbles + retKickYards + retKickTDs + returnKickFumbles + returnPuntYards + returnPuntTouchdowns + returnPuntFumbles
+  return receiveReceptions + receiveYards + receiveTouchdowns + receivefumbles + rushYards + rushTouchdowns + rushFumbles + returnKickYards + returnKickTouchdowns + returnKickFumbles + returnPuntYards + returnPuntTouchdowns + returnPuntFumbles
 }
 
 function calculateWRScore(stats) {
