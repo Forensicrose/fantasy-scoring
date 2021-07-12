@@ -3,12 +3,15 @@ const fumbles = -3
 const rushingYards = (10 * 1)
 const receivingYards = (10 * 1)
 const receivingReceptions = 1
+const returns = (15 * 1)
+const passingYards = (25 * 1)
+const passingInterceptions = -3
 
 
 function calculateQBScore(stats) {
-  let passYards = stats.passing.yards / (25 * 1)
+  let passYards = stats.passing.yards / passingYards
   let passTouchdown = stats.passing.touchdowns * touchDowns
-  let passIntercepts = stats.passing.interceptions * -3
+  let passIntercepts = stats.passing.interceptions * passingInterceptions
   let rushYards = stats.rushing.yards / rushingYards
   let rushTouchdowns = stats.rushing.touchdowns * touchDowns
   let rushFumbles = stats.rushing.fumbles * fumbles
@@ -24,15 +27,15 @@ function calculateRBScore(stats) {
   let rushYards = stats.rushing.yards / rushingYards
   let rushTouchdowns = stats.rushing.touchdowns * touchDowns
   let rushFumbles = stats.rushing.fumbles * fumbles
-  let retKickYards = stats.return.kickreturn.returns * 1
+  let retKickYards = stats.return.kickreturn.returns * returns
   let retKickTDs = stats.return.kickreturn.touchdowns * touchDowns
-  let retKickFumbles = stats.return.kickreturn.fumbles * fumbles
-  let retPuntYards = stats.return.puntreturn.returns / (15 * 1)
-  let retPuntTDs = stats.return.puntreturn.touchdowns * touchDowns
-  let retPuntFumbles = stats.return.puntreturn.fumbles * fumbles
+  let returnKickFumbles = stats.return.kickreturn.fumbles * fumbles
+  let returnPuntYards = stats.return.puntreturn.returns / returns
+  let returnPuntTouchdowns = stats.return.puntreturn.touchdowns * touchDowns
+  let returnPuntFumbles = stats.return.puntreturn.fumbles * fumbles
 
   // eslint-disable-next-line max-len
-  return receiveReceptions + receiveYards + receiveTouchdowns + receivefumbles + rushYards + rushTouchdowns + rushFumbles + retKickYards + retKickTDs + retKickFumbles + retPuntYards + retPuntTDs + retPuntFumbles
+  return receiveReceptions + receiveYards + receiveTouchdowns + receivefumbles + rushYards + rushTouchdowns + rushFumbles + retKickYards + retKickTDs + returnKickFumbles + returnPuntYards + returnPuntTouchdowns + returnPuntFumbles
 }
 
 function calculateWRScore(stats) {
@@ -43,10 +46,10 @@ function calculateWRScore(stats) {
   let rushYards = stats.rushing.yards / rushingYards
   let rushTouchdowns = stats.rushing.touchdowns * touchDowns
   let rushFumbles = stats.rushing.fumbles * fumbles
-  let returnKickYards = stats.return.kickreturn.yards / (15 * 1)
+  let returnKickYards = stats.return.kickreturn.yards / returns
   let returnKickTDs = stats.return.kickreturn.touchdowns * touchDowns
   let returnKickFumbles = stats.return.kickreturn.fumbles * fumbles
-  let returnPuntYards = stats.return.puntreturn.yards / (15 * 1)
+  let returnPuntYards = stats.return.puntreturn.yards / returns
   let returnPuntTDs = stats.return.puntreturn.touchdowns * touchDowns
   let returnPuntFumbles = stats.return.puntreturn.fumbles * fumbles
 
