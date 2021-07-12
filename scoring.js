@@ -1,10 +1,10 @@
 const touchDownsAll = 6
 const fumblesAll = -3
+const passingYards = (25 * 1)
 const rushingYards = (10 * 1)
 const receivingYards = (10 * 1)
 const receivingReceptions = 1
 const returnsAll = (15 * 1)
-const passingYards = (25 * 1)
 const passingInterceptions = -3
 
 
@@ -39,13 +39,13 @@ function calculateRBScore(stats) {
 }
 
 function calculateWRScore(stats) {
+  let rushYards = stats.rushing.yards / rushingYards
+  let rushTouchdowns = stats.rushing.touchdowns * touchDownsAll
+  let rushFumbles = stats.rushing.fumbles * fumblesAll
   let receiveReceptions = stats.receiving.receptions * receivingReceptions
   let receiveYards = stats.receiving.yards / receivingYards
   let receiveTouchdowns = stats.receiving.touchdowns * touchDownsAll
   let receivefumbles = stats.receiving.fumbles * fumblesAll
-  let rushYards = stats.rushing.yards / rushingYards
-  let rushTouchdowns = stats.rushing.touchdowns * touchDownsAll
-  let rushFumbles = stats.rushing.fumbles * fumblesAll
   let returnKickYards = stats.return.kickreturn.yards / returnsAll
   let returnKickTDs = stats.return.kickreturn.touchdowns * touchDownsAll
   let returnKickFumbles = stats.return.kickreturn.fumbles * fumblesAll
