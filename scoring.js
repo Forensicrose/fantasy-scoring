@@ -1,10 +1,12 @@
+const touchDowns = 6
+
 
 function calculateQBScore(stats) {
   let passYards = stats.passing.yards / (25 * 1)
-  let passTouchdown = stats.passing.touchdowns * 6
+  let passTouchdown = stats.passing.touchdowns * touchDowns
   let passIntercepts = stats.passing.interceptions * -3
   let rushYards = stats.rushing.yards / (10 * 1)
-  let rushTouchdowns = stats.rushing.touchdowns * 6
+  let rushTouchdowns = stats.rushing.touchdowns * touchDowns
   let rushFumbles = stats.rushing.fumbles * -3
 
   return passYards + passTouchdown + passIntercepts + rushYards + rushTouchdowns + rushFumbles
@@ -13,16 +15,16 @@ function calculateQBScore(stats) {
 function calculateRBScore(stats) {
   let receiveReceptions = stats.receiving.receptions * 1
   let receiveYards = stats.receiving.yards / (10 * 1)
-  let receiveTouchdowns = stats.receiving.touchdowns * 6
+  let receiveTouchdowns = stats.receiving.touchdowns * touchDowns
   let receivefumbles = stats.receiving.fumbles * -3
   let rushYards = stats.rushing.yards / (10 * 1)
-  let rushTouchdowns = stats.rushing.touchdowns * 6
+  let rushTouchdowns = stats.rushing.touchdowns * touchDowns
   let rushFumbles = stats.rushing.fumbles * -3
   let retKickYards = stats.return.kickreturn.returns * 1
-  let retKickTDs = stats.return.kickreturn.touchdowns * 6
+  let retKickTDs = stats.return.kickreturn.touchdowns * touchDowns
   let retKickFumbles = stats.return.kickreturn.fumbles * -3
   let retPuntYards = stats.return.puntreturn.returns / (15 * 1)
-  let retPuntTDs = stats.return.puntreturn.touchdowns * 6
+  let retPuntTDs = stats.return.puntreturn.touchdowns * touchDowns
   let retPuntFumbles = stats.return.puntreturn.fumbles * -3
 
   // eslint-disable-next-line max-len
@@ -32,16 +34,16 @@ function calculateRBScore(stats) {
 function calculateWRScore(stats) {
   let receiveReceptions = stats.receiving.receptions * 1
   let receiveYards = stats.receiving.yards / (10 * 1)
-  let receiveTouchdowns = stats.receiving.touchdowns * 6
+  let receiveTouchdowns = stats.receiving.touchdowns * touchDowns
   let receivefumbles = stats.receiving.fumbles * -3
   let rushYards = stats.rushing.yards / (10 * 1)
-  let rushTouchdowns = stats.rushing.touchdowns * 6
+  let rushTouchdowns = stats.rushing.touchdowns * touchDowns
   let rushFumbles = stats.rushing.fumbles * -3
   let returnKickYards = stats.return.kickreturn.yards / (15 * 1)
-  let returnKickTDs = stats.return.kickreturn.touchdowns * 6
+  let returnKickTDs = stats.return.kickreturn.touchdowns * touchDowns
   let returnKickFumbles = stats.return.kickreturn.fumbles * -3
   let returnPuntYards = stats.return.puntreturn.yards / (15 * 1)
-  let returnPuntTDs = stats.return.puntreturn.touchdowns * 6
+  let returnPuntTDs = stats.return.puntreturn.touchdowns * touchDowns
   let returnPuntFumbles = stats.return.puntreturn.fumbles * -3
 
   // eslint-disable-next-line max-len
@@ -50,7 +52,7 @@ function calculateWRScore(stats) {
 function calculateTEScore(stats) {
   let receiveReceptions = stats.receiving.receptions * 1
   let receiveYards = stats.receiving.yards / (10 * 1)
-  let receiveTouchdowns = stats.receiving.touchdowns * 6
+  let receiveTouchdowns = stats.receiving.touchdowns * touchDowns
   let receivefumbles = stats.receiving.fumbles * -3
 
   return receiveReceptions + receiveYards + receiveTouchdowns + receivefumbles
@@ -72,7 +74,7 @@ function calculateScore(player) {
     case ('TE'):
       score = calculateTEScore(player.stats)
       break
-    default: ('unknown')
+    default:
       score = 0
   }
 
